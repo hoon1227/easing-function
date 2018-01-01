@@ -1,3 +1,23 @@
-p{
-  color: red;
+svg{
+  background-color: red;
+}
+.graph-container{
+  width: 200px;
+  height: 200px;
+  .bezier-handle{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  .top{
+    top: 0;
+    left: 200px;
+  }
+  .bottom{
+    top: 200px;
+    left: 0;
+  }
 }

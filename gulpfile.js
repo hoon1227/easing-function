@@ -10,6 +10,7 @@ var src = 'src';
 var dist = '';
 var paths = {
 	js: src + '/js/*.js',
+	commonJS: src + '/js/common/*.js',
 	scss: src + '/style/*.scss',
 	html: src + '/**/*.html',
 }
@@ -25,6 +26,11 @@ gulp.task('combine-js', function () {
 	return gulp.src(paths.js)
 		.pipe(concat('script.js'))
 		.pipe(uglify())
+		.pipe(gulp.dest(dist + 'js'));
+});
+
+gulp.task('common-js', function () {
+	return gulp.src(paths.commonJS)
 		.pipe(gulp.dest(dist + 'js'));
 });
 
@@ -53,6 +59,8 @@ gulp.task('watch', function () {
 
 //기본 task 설정
 gulp.task('default', [
-	'server']);
+	'server', 'combine-js', 'common-js',
+	'compile-sass', 'compress-html',
+	'watch' ]);
 
 // gulp.task('default', ['combine-js']);
