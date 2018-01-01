@@ -17,6 +17,12 @@
   },
   "homepage": "https://github.com/hoon1227/easing-function#readme",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-webserver": "^0.9.1"
   }
 }
