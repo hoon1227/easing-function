@@ -1,0 +1,22 @@
+{
+  "name": "easing-function",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoon1227/easing-function.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoon1227/easing-function/issues"
+  },
+  "homepage": "https://github.com/hoon1227/easing-function#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
