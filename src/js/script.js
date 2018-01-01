@@ -14,7 +14,9 @@ function cubicBezierHandle(){
       yPosForTop = offset.top;
       cubicBezierAxis = "M0 200 C " +  xPosForBottom + " " + yPosForBottom + ", " + xPosForTop + " " + yPosForTop + ", 200 0";
 
-      cubicBezier.find("path").attr("d", cubicBezierAxis);
+      cubicBezier.find(".bezier").attr("d", cubicBezierAxis);
+      $(".lineTop").attr("x2", xPosForTop);
+      $(".lineTop").attr("y2", yPosForTop);
     }
   });
   $('.bottom').draggable({
@@ -24,7 +26,9 @@ function cubicBezierHandle(){
       yPosForBottom = offset.top;
       cubicBezierAxis = "M0 200 C " +  xPosForBottom + " " + yPosForBottom + ", " + xPosForTop + " " + yPosForTop + ", 200 0";
 
-      cubicBezier.find("path").attr("d", cubicBezierAxis);
+      cubicBezier.find(".bezier").attr("d", cubicBezierAxis);
+      $(".lineBottom").attr("x2", xPosForBottom);
+      $(".lineBottom").attr("y2", yPosForBottom);
     }
   });
 }

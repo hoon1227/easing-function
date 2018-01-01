@@ -17,7 +17,9 @@
       <div class="bezier-handle bottom"></div>
       <div class="bezier-handle top"></div>
       <svg class="cubic-bezier" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 200 C 0 200, 200 0, 200 0" stroke="black" fill="transparent"/>
+        <path class="bezier" d="M0 200 C 0 200, 200 0, 200 0" stroke="black" fill="transparent"/>
+        <line class="lineTop" x1="200" y1="0" x2="200" y2="0" style="stroke:rgb(255,255,255);stroke-width:2" />
+        <line class="lineBottom" x1="0" y1="200" x2="0" y2="200" style="stroke:rgb(255,255,255);stroke-width:2" />
       </svg>
     </div>
     <script type="text/javascript" src="/js/script.js"></script>
