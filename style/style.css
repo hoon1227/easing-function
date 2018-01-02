@@ -1,9 +1,7 @@
-svg {
-  background-color: red; }
-
 .graph-container {
-  width: 200px;
-  height: 200px; }
+  position: relative;
+  width: 290px;
+  height: 490px; }
   .graph-container .bezier-handle {
     position: absolute;
     width: 20px;
