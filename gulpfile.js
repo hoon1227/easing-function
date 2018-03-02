@@ -5,6 +5,7 @@ var uglify = require('gulp-uglify');
 var minifyhtml = require('gulp-minify-html');
 var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
+// var normalizeCSS = require('normalize.css');
 
 var src = 'src';
 var dist = '';
@@ -47,6 +48,7 @@ gulp.task('compress-html', function () {
 		.pipe(minifyhtml())
 		.pipe(gulp.dest(dist));
 });
+
 
 // 파일 변경 감지 및 브라우저 재시작
 gulp.task('watch', function () {

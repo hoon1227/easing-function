@@ -1,16 +1,27 @@
 
-function cubicBezierHandle(){
-  var cubicBezier = $(".cubic-bezier");
-  var svgHeight = 490,
-      graphSize = 290,
-      handleSizeHalf = $(".bezier-handle").width() / 2
-      graphBottomPoint = graphSize + (svgHeight - graphSize) / 2,
-      graphTopPoint = (svgHeight - graphSize) / 2,
+var cubicBezier = $(".cubic-bezier");
+var svgHeight = 490,
+    graphSize = 290,
+    handleSizeHalf = $(".bezier-handle").width() / 2
+    graphBottomPoint = graphSize + (svgHeight - graphSize) / 2,
+    graphTopPoint = (svgHeight - graphSize) / 2,
 
-      topHandlePositionX = graphTopPoint,
-      topHandlePositionY = graphTopPoint + graphTopPoint / 2,
-      bottomHandlePositionX = graphSize - graphTopPoint,
-      bottomHandlePositionY = svgHeight - (graphTopPoint + graphTopPoint / 2);
+    topHandlePositionX = graphTopPoint,
+    topHandlePositionY = graphTopPoint + graphTopPoint / 2,
+    bottomHandlePositionX = graphSize - graphTopPoint,
+    bottomHandlePositionY = svgHeight - (graphTopPoint + graphTopPoint / 2);
+
+
+function bezierCurveValue(){
+  var valueX1 = (bottomHandlePositionX / graphSize).toFixed(2);
+  var valueY1 = ((graphBottomPoint - bottomHandlePositionY) / graphSize).toFixed(2);
+  var valueX2 = (topHandlePositionX / graphSize).toFixed(2);
+  var valueY2 = ((graphBottomPoint - topHandlePositionY) / graphSize).toFixed(2);
+  var bezierValue = [valueX1, valueY1, valueX2, valueY2];
+  return bezierValue;
+}
+
+function cubicBezierHandle(){
 
 
   $('.top').draggable({
@@ -31,6 +42,7 @@ function cubicBezierHandle(){
       bezierCurve();
     }
   });
+
 
   function bezierCurve(){
     cubicBezierAxis = "M0" + " " + graphBottomPoint + " C " +  bottomHandlePositionX + " " + bottomHandlePositionY + ", " + topHandlePositionX + " " + topHandlePositionY + ", " + graphSize + " " + graphTopPoint;
@@ -82,3 +94,11 @@ function cubicBezierHandle(){
 
 }
 cubicBezierHandle();
+
+function interactionAssets(){
+  $('.tap').click(function(){
+    $(this).toggleClass('animate');
+    $(this).find('.object').css("transition-timing-function", "cubic-bezier(" + $(".valueX1").html() + ", " + $(".valueY1").html() + ", " + $(".valueX2").html() + ", " + $(".valueY2").html() + ")");
+  });
+}
+interactionAssets();

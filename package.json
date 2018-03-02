@@ -23,6 +23,10 @@
     "gulp-minify-html": "^1.0.6",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
-    "gulp-webserver": "^0.9.1"
+    "gulp-webserver": "^0.9.1",
+    "node-normalize-scss": "^3.0.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.0"
   }
 }
