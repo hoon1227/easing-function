@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="/style/style.css">
     <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.path.js"></script>
+    <script type="text/javascript" src="/js/jquery.bez.js"></script>
   </head>
   <body>
     <div id="wrap">
@@ -21,8 +23,8 @@
             <div class="tap floatingBtn">
               <div class="button">
                 <svg class="object" width="20" height="20">
-                    <line x1="10" y1="0" x2="10" y2="20" style="stroke:rgb(0,0,0);stroke-width:2" />
-                    <line x1="0" y1="10" x2="20" y2="10" style="stroke:rgb(0,0,0);stroke-width:2" />
+                  <line x1="10" y1="0" x2="10" y2="20" style="stroke:rgb(0,0,0);stroke-width:2" />
+                  <line x1="0" y1="10" x2="20" y2="10" style="stroke:rgb(0,0,0);stroke-width:2" />
                 </svg>
               </div>
               <div class="child child01 object"></div>
@@ -30,10 +32,28 @@
               <div class="child child03 object"></div>
             </div>
           </div>
+          <div class="screen hide">
+            <div class="materialTransition">
+              <div class="button object">
+              </div>
+            </div>
+          </div>
+          <div class="screen hide">
+            <div class="tap transforming">
+              
+            </div>
+          </div>
         </div>
       </div>
       <div class="section easing">
-        <div class="header"></div>
+        <div class="list">
+          <ul>
+            <li class="on"><button class="interactionList" data-name="floatingBtn">Floating Action Button</button></li>
+            <li><button class="interactionList" data-name="materialTransition">Material Transition</button></li>
+            <li><button class="interactionList" data-name="transforming">Transforming</button></li>
+            <!-- <li><button class="interactionList" data-name="">Tabs</button></li> -->
+          </ul>
+        </div>
         <div class="container">
           <div class="graph">
             <div class="bezier-handle bottom"></div>
@@ -46,6 +66,11 @@
               <line class="axisY" x1="0" y1="290" x2="0" y2="290" style="stroke:rgb(255,255,255);stroke-width:1" />
             </svg>
             <p class="cubicBezierValue">Cubic-Bezier(<span class="valueX1">1</span>, <span class="valueY1">1</span>, <span class="valueX2">1</span>, <span class="valueY2">1</span>)</p>
+            <form class="duration">
+              Duration
+              <input type="number" name="" step="0.1" value="0.5">
+              sec
+            </form>
           </div>
         </div>
       </div>

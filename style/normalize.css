@@ -2,6 +2,9 @@
 
 /* Document
    ========================================================================== */
+body, h1, h2, h3, h4, input, button, select{
+  font-family: Colfax, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
 
 /**
  * 1. Correct the line height in all browsers.

@@ -95,10 +95,77 @@ function cubicBezierHandle(){
 }
 cubicBezierHandle();
 
+$('.interactionList').click(function(){
+  var $this = $(this),
+      title = $this.data('name');
+
+  $this.parent().addClass('on').siblings().removeClass('on');
+  $("." + title).parent().fadeIn().siblings().fadeOut();
+  // $("." + title).parent().css('opacity', '1').siblings().css('opacity', '0');
+})
+
 function interactionAssets(){
+  function durationValue(){
+    var dur = $(".duration input").val();
+    return dur;
+  }
   $('.tap').click(function(){
     $(this).toggleClass('animate');
-    $(this).find('.object').css("transition-timing-function", "cubic-bezier(" + $(".valueX1").html() + ", " + $(".valueY1").html() + ", " + $(".valueX2").html() + ", " + $(".valueY2").html() + ")");
+    $(this).find('.object').css({
+      "transition-timing-function": "cubic-bezier(" + $(".valueX1").html() + ", " + $(".valueY1").html() + ", " + $(".valueX2").html() + ", " + $(".valueY2").html() + ")",
+      "transition-duration": durationValue() + "s"
+    });
+  });
+
+  $('.materialTransition .button').click(function(){
+    var bezierParamsStart = {
+          start: {
+            x: 100,
+            y: 400,
+            angle: -60
+          },
+          end: {
+            x:0,
+            y:0,
+            angle: 10,
+            length: 0.25
+          }
+        },
+        bezierParamsReverse = {
+          start: {
+            x: 0,
+            y: 0,
+            angle: 10
+          },
+          end: {
+            x:100,
+            y:400,
+            angle: -60,
+            length: 0.25
+          }
+        };
+    var bezierValue = $.bez([$(".valueX1").html(), $(".valueY1").html(), $(".valueX2").html(), $(".valueY2").html()]),
+        duration = durationValue() * 1000;
+
+    if ($(".materialTransition").position().left === 100) {
+      $(this).parent().animate({
+        path : new $.path.bezier(bezierParamsStart)
+      }, duration, bezierValue);
+      $(this).parent().toggleClass('animate');
+      $(this).css({
+        "transition-timing-function": "cubic-bezier(" + $(".valueX1").html() + ", " + $(".valueY1").html() + ", " + $(".valueX2").html() + ", " + $(".valueY2").html() + ")",
+         "transition-duration": durationValue() + "s"
+      });
+    }else{
+      $(this).parent().delay(0).animate({
+        path : new $.path.bezier(bezierParamsReverse)
+      }, duration, bezierValue);
+      $(this).parent().toggleClass('animate');
+      $(this).css({
+        "transition-timing-function": "cubic-bezier(" + $(".valueX1").html() + ", " + $(".valueY1").html() + ", " + $(".valueX2").html() + ", " + $(".valueY2").html() + ")",
+        "transition-duration": durationValue() + "s"
+      });
+    }
   });
 }
 interactionAssets();

@@ -11,34 +11,59 @@
     justify-content: center;
     width: 100%; }
     .section.assets .phone {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      position: relative;
       width: 344px;
       height: 710px;
       background-color: #232C39;
       box-shadow: 0 22px 64px 0 rgba(0, 0, 0, 0.4);
       border-radius: 52px; }
       .section.assets .phone .screen {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         width: 320px;
         height: 569px;
-        position: relative;
-        background-color: #383E45; }
+        background-color: #383E45;
+        overflow: hidden;
+        transition: 0.3s; }
+        .section.assets .phone .screen.hide {
+          display: none; }
   .section.easing {
-    width: 576px; }
-    .section.easing .header {
-      height: 147px;
-      background-color: #303030;
+    width: 770px; }
+    .section.easing .list {
+      height: 260px;
+      background-color: #36474E;
       box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.12), 0 4px 4px 0 rgba(0, 0, 0, 0.24); }
+      .section.easing .list ul {
+        padding: 0;
+        margin: 0; }
+        .section.easing .list ul li {
+          height: 65px;
+          list-style-type: none;
+          border-bottom: 1px solid #262525; }
+          .section.easing .list ul li.on {
+            background-color: #00867C; }
+          .section.easing .list ul li button {
+            padding: 0 0 0 25px;
+            width: 100%;
+            height: 100%;
+            color: #FFF;
+            font-size: 20px;
+            text-align: left;
+            border: none;
+            background-color: transparent;
+            cursor: pointer; }
+            .section.easing .list ul li button:focus {
+              outline: none; }
     .section.easing .container {
       display: flex;
       align-items: center;
       justify-content: center;
-      height: calc(100% - 147px);
-      background-color: #404040; }
+      height: calc(100% - 260px);
+      background-color: #1D313A; }
       .section.easing .container .graph {
-        position: relative;
-        width: 290px; }
+        position: relative; }
         .section.easing .container .graph .bezier-handle {
           position: absolute;
           width: 20px;
@@ -52,6 +77,23 @@
         .section.easing .container .graph .bottom {
           top: 200px;
           left: 0; }
+        .section.easing .container .graph .cubicBezierValue {
+          font-size: 20px;
+          color: #FFF;
+          font-weight: 300; }
+        .section.easing .container .graph .duration {
+          font-size: 20px;
+          color: #FFF;
+          font-weight: 300; }
+          .section.easing .container .graph .duration input {
+            margin-left: 7px;
+            width: 52px;
+            height: 34px;
+            border: 0;
+            border-radius: 4px;
+            background-color: #4E4E4E;
+            text-align: right;
+            color: #FFF; }
 
 .tap {
   cursor: pointer; }
@@ -95,3 +137,34 @@
       transform: translateY(-124px); }
     .tap.floatingBtn.animate .child.child03 {
       transform: translateY(-184px); }
+  .tap.transforming {
+    width: 100px;
+    height: 100px;
+    background-color: #80FFFF;
+    border-radius: 3px; }
+
+.materialTransition {
+  position: absolute;
+  width: 320px;
+  height: 200px;
+  left: 100px;
+  top: 400px;
+  overflow: hidden; }
+  .materialTransition .button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 58px;
+    height: 58px;
+    border-radius: 100%;
+    background-color: #80FFFF;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.12), 0 6px 6px 0 rgba(0, 0, 0, 0.24);
+    cursor: pointer;
+    transition: all 0.3s;
+    transform-origin: 50% 50%; }
+  .materialTransition.animate {
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.12), 0 6px 6px 0 rgba(0, 0, 0, 0.24); }
+    .materialTransition.animate .button {
+      transform: translate(-50%, -50%) scale(8);
+      box-shadow: 0 0 6px 0 transparent, 0 6px 6px 0 transparent; }
