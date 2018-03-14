@@ -9,32 +9,148 @@ svg{
 .section{
   height: 100vh;
   &.assets{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
     width: 100%;
-    .phone{
-      position: relative;
-      width: 344px;
-      height: 710px;
-      background-color: #232C39;
+    .asset{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       box-shadow: 0 22px 64px 0 rgba(0,0,0,0.40);
-      border-radius: 52px;
-      .screen{
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 320px;
-        height: 569px;
-        background-color: #EDEDEE;
-        overflow: hidden;
-        transition: 0.3s;
-        &.hide{
-          // opacity: 0;
-          display: none;
+      &.floatingBtn{
+        .tap{
+          position: absolute;
+          right: 23px;
+          bottom: 26px;
+          .button{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 58px;
+            height: 58px;
+            border-radius: 100%;
+            background-color: #80FFFF;
+            box-shadow: 0 0 6px 0 rgba(0,0,0,0.12), 0 6px 6px 0 rgba(0,0,0,0.24);
+            z-index: 2;
+            svg{
+              transition: all 0.3s;
+            }
+          }
+          .child{
+            position: absolute;
+            bottom: 4px;
+            left: 4px;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            background-color: red;
+            transition: all 0.3s;
+            &.child.child01.animate{
+              transform: translateY(-64px);
+            }
+            &.child.child02.animate{
+              transform: translateY(-124px);
+            }
+            &.child.child03.animate{
+              transform: translateY(-184px);
+            }
+          }
+          &.animate{
+            svg{
+              transform: rotate(45deg);
+            }
+            .child{
+              &.child01{
+                transform: translateY(-64px);
+              }
+              &.child02{
+                transform: translateY(-124px);
+              }
+              &.child03{
+                transform: translateY(-184px);
+              }
+            }
+          }
         }
       }
+      &.materialTransition{
+        .container{
+          position: absolute;
+          width: 320px;
+          height: 200px;
+          left: 100px;
+          top: 400px;
+          overflow: hidden;
+          .button{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 58px;
+            height: 58px;
+            border-radius: 100%;
+            background-color: #80FFFF;
+            box-shadow: 0 0 6px 0 rgba(0,0,0,0.12), 0 6px 6px 0 rgba(0,0,0,0.24);
+            cursor: pointer;
+            transition: all 0.3s;
+            transform-origin: 50% 50%;
+          }
+          &.animate{
+            box-shadow: 0 0 6px 0 rgba(0,0,0,0.12), 0 6px 6px 0 rgba(0,0,0,0.24);
+            .button{
+              transform: translate(-50%, -50%) scale(8);
+              box-shadow: 0 0 6px 0 rgba(0,0,0,0), 0 6px 6px 0 rgba(0,0,0,0);
+            }
+          }
+        }
+      }
+      &.toggleBtn{
+        width: 176px;
+        height: 75px;
+        background: #232C39;
+        border-radius: 100px;
+        .object{
+          position: absolute;
+          top: 7px;
+          left: 7px;
+          width: 61px;
+          height: 61px;
+          background-color: #70E1CE;
+          border-radius: 100px;
+          transition: all 0.3s;
+        }
+        &.animate .object{
+          left: 108px;
+        }
+      }
+
+      &.phone{
+        width: 344px;
+        height: 710px;
+        background-color: #232C39;
+        border-radius: 52px;
+        .screen{
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 320px;
+          height: 569px;
+          background-color: #EDEDEE;
+          overflow: hidden;
+          transition: 0.3s;
+        }
+      }
+      &.hide{
+        display: none;
+      }
+    }
+    .tap{
+      cursor: pointer;
     }
   }
   &.easing{
@@ -128,99 +244,6 @@ svg{
           }
         }
       }
-    }
-  }
-}
-.tap{
-  cursor: pointer;
-  &.floatingBtn{
-    position: absolute;
-    right: 23px;
-    bottom: 26px;
-    .button{
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 58px;
-      height: 58px;
-      border-radius: 100%;
-      background-color: #80FFFF;
-      box-shadow: 0 0 6px 0 rgba(0,0,0,0.12), 0 6px 6px 0 rgba(0,0,0,0.24);
-      z-index: 2;
-      svg{
-        transition: all 0.3s;
-      }
-    }
-    .child{
-      position: absolute;
-      bottom: 4px;
-      left: 4px;
-      width: 50px;
-      height: 50px;
-      border-radius: 100%;
-      background-color: red;
-      transition: all 0.3s;
-      &.child.child01.animate{
-        transform: translateY(-64px);
-      }
-      &.child.child02.animate{
-        transform: translateY(-124px);
-      }
-      &.child.child03.animate{
-        transform: translateY(-184px);
-      }
-    }
-    &.animate{
-      svg{
-        transform: rotate(45deg);
-      }
-      .child{
-        &.child01{
-          transform: translateY(-64px);
-        }
-        &.child02{
-          transform: translateY(-124px);
-        }
-        &.child03{
-          transform: translateY(-184px);
-        }
-      }
-    }
-  }
-  &.transforming{
-    width: 100px;
-    height: 100px;
-    background-color: #80FFFF;
-    border-radius: 3px;
-  }
-}
-.materialTransition{
-  position: absolute;
-  width: 320px;
-  height: 200px;
-  left: 100px;
-  top: 400px;
-  overflow: hidden;
-  .button{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 58px;
-    height: 58px;
-    border-radius: 100%;
-    background-color: #80FFFF;
-    box-shadow: 0 0 6px 0 rgba(0,0,0,0.12), 0 6px 6px 0 rgba(0,0,0,0.24);
-    cursor: pointer;
-    transition: all 0.3s;
-    transform-origin: 50% 50%;
-  }
-  &.animate{
-    box-shadow: 0 0 6px 0 rgba(0,0,0,0.12), 0 6px 6px 0 rgba(0,0,0,0.24);
-    .button{
-      transform: translate(-50%, -50%) scale(8);
-      box-shadow: 0 0 6px 0 rgba(0,0,0,0), 0 6px 6px 0 rgba(0,0,0,0);
     }
   }
 }

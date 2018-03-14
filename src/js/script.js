@@ -102,7 +102,7 @@ $('.interactionList').click(function(){
       title = $this.data('name');
 
   $this.parent().addClass('on').siblings().removeClass('on');
-  $("." + title).parent().fadeIn().siblings().fadeOut();
+  $("." + title).fadeIn().siblings().fadeOut();
   // $("." + title).parent().css('opacity', '1').siblings().css('opacity', '0');
 })
 
@@ -149,7 +149,7 @@ function interactionAssets(){
     var bezierValue = $.bez([$(".valueX1").html(), $(".valueY1").html(), $(".valueX2").html(), $(".valueY2").html()]),
         duration = durationValue() * 1000;
 
-    if ($(".materialTransition").position().left === 100) {
+    if ($(".materialTransition .container").position().left === 100) {
       $(this).parent().animate({
         path : new $.path.bezier(bezierParamsStart)
       }, duration, bezierValue);
