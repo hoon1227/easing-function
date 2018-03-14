@@ -63,7 +63,11 @@
       height: calc(100% - 260px);
       background-color: #1D313A; }
       .section.easing .container .graph {
-        position: relative; }
+        position: relative;
+        width: 310px;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
         .section.easing .container .graph .bezier-handle {
           position: absolute;
           width: 20px;
@@ -77,6 +81,8 @@
         .section.easing .container .graph .bottom {
           top: 200px;
           left: 0; }
+        .section.easing .container .graph svg {
+          overflow: visible; }
       .section.easing .container .value {
         min-width: 310px; }
         .section.easing .container .value .cubicBezierValue {

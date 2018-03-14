@@ -78,6 +78,11 @@ svg{
       background-color: #1D313A;
       .graph{
         position: relative;
+        width: 310px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         // width: 290px;
         .bezier-handle{
           position: absolute;
@@ -94,6 +99,9 @@ svg{
         .bottom{
           top: 200px;
           left: 0;
+        }
+        svg{
+          overflow: visible;
         }
       }
       .value{

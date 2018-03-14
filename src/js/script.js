@@ -27,20 +27,22 @@ function cubicBezierHandle(){
   $('.top').draggable({
     drag: function(){
       var position = $(this).position();
-      topHandlePositionX = position.left + handleSizeHalf;
+      topHandlePositionX = position.left;
       topHandlePositionY = position.top + handleSizeHalf;
 
       bezierCurve();
-    }
+    },
+    containment: "parent"
   });
   $('.bottom').draggable({
     drag: function(){
       var position = $(this).position();
-      bottomHandlePositionX = position.left + handleSizeHalf;
+      bottomHandlePositionX = position.left;
       bottomHandlePositionY = position.top + handleSizeHalf;
 
       bezierCurve();
-    }
+    },
+    containment: "parent"
   });
 
 
@@ -49,7 +51,7 @@ function cubicBezierHandle(){
 
     $(".bezier").attr("d", cubicBezierAxis);
 
-    $(".lineTop").attr("x2", topHandlePositionX);
+    $(".lineTop").attr("x2", topHandlePositionX - handleSizeHalf);
     $(".lineTop").attr("y2", topHandlePositionY);
     $(".lineBottom").attr("x2", bottomHandlePositionX);
     $(".lineBottom").attr("y2", bottomHandlePositionY);
