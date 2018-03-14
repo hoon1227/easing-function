@@ -1,3 +1,8 @@
+$CTA-color: #0FDDB5;
+$Primary-color: #242831;
+$Secondary-color: #292C37;
+$Select-color: #4389FF;
+
 svg{
   // background-color: red;
 }
@@ -33,7 +38,7 @@ svg{
             width: 58px;
             height: 58px;
             border-radius: 100%;
-            background-color: #80FFFF;
+            background-color: $CTA-color;
             box-shadow: 0 0 6px 0 rgba(0,0,0,0.12), 0 6px 6px 0 rgba(0,0,0,0.24);
             z-index: 2;
             svg{
@@ -93,7 +98,7 @@ svg{
             width: 58px;
             height: 58px;
             border-radius: 100%;
-            background-color: #80FFFF;
+            background-color: $CTA-color;
             box-shadow: 0 0 6px 0 rgba(0,0,0,0.12), 0 6px 6px 0 rgba(0,0,0,0.24);
             cursor: pointer;
             transition: all 0.3s;
@@ -119,7 +124,7 @@ svg{
           left: 7px;
           width: 61px;
           height: 61px;
-          background-color: #70E1CE;
+          background-color: $CTA-color;
           border-radius: 100px;
           transition: all 0.3s;
         }
@@ -157,7 +162,7 @@ svg{
     width: 770px;
     .list{
       height: 260px;
-      background-color: #36474E;
+      background-color: $Secondary-color;
       box-shadow: 0 0 4px 0 rgba(0,0,0,0.12), 0 4px 4px 0 rgba(0,0,0,0.24);
       ul{
         padding: 0;
@@ -167,7 +172,7 @@ svg{
           list-style-type: none;
           border-bottom: 1px solid #262525;
           &.on{
-            background-color: #00867C;
+            background-color: $Select-color;
           }
           button{
             padding: 0 0 0 25px;
@@ -191,7 +196,7 @@ svg{
       align-items: center;
       flex-direction: column;
       height: calc(100% - 260px);
-      background-color: #1D313A;
+      background-color: $Primary-color;
       .graph{
         position: relative;
         width: 310px;
@@ -204,7 +209,7 @@ svg{
           position: absolute;
           width: 20px;
           height: 20px;
-          background-color: #80FFFF;
+          background-color: $CTA-color;
           border-radius: 20px;
           cursor: pointer;
         }
