@@ -3,9 +3,17 @@ $Primary-color: #242831;
 $Secondary-color: #292C37;
 $Select-color: #4389FF;
 
-svg{
-  // background-color: red;
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(100);
+    opacity: 1;
+  }
 }
+
 #wrap{
   display: flex;
   align-items: center;
@@ -15,9 +23,6 @@ svg{
   height: 100vh;
   &.assets{
     position: relative;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
     width: 100%;
     .asset{
       position: absolute;
@@ -131,6 +136,34 @@ svg{
         &.animate .object{
           left: 108px;
         }
+      }
+      &.rippleEffect{
+        // width: 249px;
+        // height: 69px;
+        padding: 19px 51px 21px;
+        background: $CTA-color;
+        border-radius: 5px;
+        font-size: 26px;
+        color: #FFF;
+        overflow: hidden;
+        cursor: pointer;
+        animation-name: ripple;
+        .object{
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 5px;
+          height: 5px;
+          background-color: #FFF;
+          border-radius: 100%;
+          opacity: 0;
+
+        }
+        // &.animate{
+        //   .object{
+        //     transform: scale(1);
+        //   }
+        // }
       }
 
       &.phone{

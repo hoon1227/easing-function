@@ -169,5 +169,18 @@ function interactionAssets(){
       });
     }
   });
+
+  $('.rippleEffect').click(function(event){
+    var buttonPosition = $(this).position(),
+        initPostionX = event.pageX - buttonPosition.left,
+        initPostionY = event.pageY - buttonPosition.top;
+
+    $(this).append('<div class=object></div>');
+    // $(this).toggleClass('animate');
+    // $(this).find('.object').css({
+    //   "transition-timing-function": "cubic-bezier(" + $(".valueX1").html() + ", " + $(".valueY1").html() + ", " + $(".valueX2").html() + ", " + $(".valueY2").html() + ")",
+    //   "transition-duration": durationValue() + "s"
+    // });
+  })
 }
 interactionAssets();
